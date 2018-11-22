@@ -32,29 +32,28 @@ var template = React.createElement(
     )
 );
 
-// Create a templateTwo var JSC expression
-// div
-//  h1 -> Name
-//  p -> Age: your age
-//  p -> Location: Hometown
-// Render templateTwo instead of template
+var userName = 'Robert';
+var userAge = 29;
+var userLocation = 'Myrtle Beach';
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Robert Evans'
+        userName
     ),
     React.createElement(
         'p',
         null,
-        'Age: 29'
+        'Age: ',
+        userAge
     ),
     React.createElement(
         'p',
         null,
-        'Location: Myrtle Beach'
+        'Location: ',
+        userLocation
     )
 );
 

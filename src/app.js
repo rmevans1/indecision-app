@@ -12,17 +12,14 @@ var template = (
     </div>
 );
 
-// Create a templateTwo var JSC expression
-// div
-//  h1 -> Name
-//  p -> Age: your age
-//  p -> Location: Hometown
-// Render templateTwo instead of template
+var userName = 'Robert';
+var userAge = 29;
+var userLocation = 'Myrtle Beach';
 var templateTwo = (
     <div>
-        <h1>Robert Evans</h1>
-        <p>Age: 29</p>
-        <p>Location: Myrtle Beach</p>
+        <h1>{userName}</h1>
+        <p>Age: {userAge}</p>
+        <p>Location: {userLocation}</p>
     </div>
 );
 
