@@ -49,3 +49,17 @@ const user3 = {
 };
 
 console.log(user3.printPlacesLived());
+
+//Challenge area
+const multiplier = {
+    //numbers - array of numbers
+    //multiplyBy - single number
+    //multiply - numbers that have been multiplied
+    numbers: [5, 10, 15, 20],
+    multiplyBy: 2,
+    multiply() {
+        return this.numbers.map((number) => number * this.multiplyBy);
+    }
+};
+
+console.log(multiplier.multiply());

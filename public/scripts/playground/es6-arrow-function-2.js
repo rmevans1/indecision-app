@@ -57,3 +57,21 @@ var user3 = {
 };
 
 console.log(user3.printPlacesLived());
+
+//Challenge area
+var multiplier = {
+    //numbers - array of numbers
+    //multiplyBy - single number
+    //multiply - numbers that have been multiplied
+    numbers: [5, 10, 15, 20],
+    multiplyBy: 2,
+    multiply: function multiply() {
+        var _this3 = this;
+
+        return this.numbers.map(function (number) {
+            return number * _this3.multiplyBy;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
