@@ -2,6 +2,9 @@
 
 console.log('App.js is running!');
 
+// ternary operators
+// logical and operator
+
 // create app object title/subtitle
 // use title/subtitle in the template
 
@@ -44,28 +47,36 @@ var user = {
     age: 29,
     location: 'Myrtle Beach'
 };
+
+// IF Statement
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+}
+
 var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name
+        user.name ? user.name : 'Anonymous'
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
         'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        user.location
-    )
+    getLocation(user.location)
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
