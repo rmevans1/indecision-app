@@ -1,20 +1,16 @@
 console.log('App.js is running!');
 
-// ternary operators
-// logical and operator
-
-// create app object title/subtitle
-// use title/subtitle in the template
-
-// JSX - JavaScript XML
 var app = {
     title: 'Indecision App',
-    subtitle: 'Put your life in the hands of a computer'
-}
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
+};
+
 var template = (
     <div>
         <h1>{app.title}</h1>
-        <p>{app.subtitle}</p>
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
         <ol>
             <li>Item one</li>
             <li>Item two</li>
@@ -35,6 +31,8 @@ function getLocation(location) {
     }
 }
 
+//h1 Ternary operator
+//p logical and
 var templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymous'}</h1>
@@ -45,4 +43,4 @@ var templateTwo = (
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
