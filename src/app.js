@@ -18,29 +18,18 @@ const template = (
     </div>
 );
 
-const user = {
-    name: 'Robert',
-    age: 29,
-    location: 'Myrtle Beach'
-};
+let count = 0;
 
-// IF Statement
-function getLocation(location) {
-    if (location) {
-        return <p>Location: {location}</p>;
-    }
+const addOne = () => {
+    console.log('addOne');
 }
 
-//h1 Ternary operator
-//p logical and
 const templateTwo = (
     <div>
-        <h1>{user.name ? user.name : 'Anonymous'}</h1>
-        {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-        {getLocation(user.location)}
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
     </div>
-);
-
+)
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
