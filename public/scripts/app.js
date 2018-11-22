@@ -2,19 +2,26 @@
 
 console.log('App.js is running!');
 
+// create app object title/subtitle
+// use title/subtitle in the template
+
 // JSX - JavaScript XML
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer'
+};
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Indecision App'
+        app.title
     ),
     React.createElement(
         'p',
         null,
-        'This is some info'
+        app.subtitle
     ),
     React.createElement(
         'ol',
@@ -61,4 +68,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
