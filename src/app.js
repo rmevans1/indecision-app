@@ -8,7 +8,7 @@ class IndecisionApp extends React.Component {
             <div>
                 <Header title={title} subtitle={subtitle} />
                 <Action/>
-                <Options/>
+                <Options options={options}/>
                 <AddOption/>
             </div>
         );
@@ -40,7 +40,7 @@ class Options extends React.Component {
     render() {
         return (
             <div>
-                <p>Options component here</p>
+                <p>Options component here: {this.props.options.length}</p>
                 <Option/>
             </div>
         );
