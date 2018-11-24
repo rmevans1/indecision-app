@@ -13,6 +13,25 @@ class Person {
     }
 }
 
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
+    hasMajor() {
+        return !!this.major;
+    }
+    getDescription() {
+        let description = super.getDescription();
+
+        if (this.hasMajor()) {
+            description += ` Their major is ${this.major}.`;
+        }
+
+        return description;
+    }
+}
+
 const me = new Person('Robert Evans', 29);
 console.log(me.getGreeting());
 console.log(me.getDescription());
@@ -20,3 +39,11 @@ console.log(me.getDescription());
 const other = new Person();
 console.log(other.getGreeting());
 console.log(other.getDescription());
+
+const me2 = new Student('Robert Evans', 29, 'Computer Science');
+console.log(me2.hasMajor());
+console.log(me2.getDescription());
+
+const other2 = new Student();
+console.log(other2.hasMajor());
+console.log(other2.getDescription());
