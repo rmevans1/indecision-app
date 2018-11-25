@@ -40,7 +40,11 @@ var Counter = function (_React$Component) {
     }, {
         key: 'handleMinusOne',
         value: function handleMinusOne() {
-            console.log('handleMinusOne');
+            this.setState(function (prevState) {
+                return {
+                    count: prevState.count - 1
+                };
+            });
         }
     }, {
         key: 'handleReset',
@@ -50,7 +54,7 @@ var Counter = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            //this.state.count step 2 in state
+            // this.state.count step 2 in state
             return React.createElement(
                 'div',
                 null,
