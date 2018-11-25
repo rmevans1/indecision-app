@@ -115,6 +115,7 @@ class AddOption extends React.Component {
             error: undefined
         }
     }
+
     handleAddOption(e) {
         e.preventDefault();
 
@@ -122,16 +123,16 @@ class AddOption extends React.Component {
         const error = this.props.handleAddOption(option);
         e.target.elements.option.value = '';
         this.setState(() => {
-            return { error };  // same as error: error
+            return {error};  // same as error: error
         });
     }
 
-    render () {
+    render() {
         return (
             <div>
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.handleAddOption}>
-                    <input type="text" name="option" />
+                    <input type="text" name="option"/>
                     <button>Add Option</button>
                 </form>
             </div>
@@ -139,4 +140,14 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
+
+const User = (props) => {
+    return (
+        <div>
+            <p>Name: {props.name}</p>
+            <p>Age: {props.age}</p>
+        </div>
+    );
+};
+
+ReactDOM.render(<User name="Robert" age={29}/>, document.getElementById('app'));
