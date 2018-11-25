@@ -7,10 +7,11 @@
   "scripts": {
     "serve": "live-server .\\public\\",
     "build": "webpack --mode=none",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server --mode=none"
   },
   "dependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "babel-cli": "6.26.0",
