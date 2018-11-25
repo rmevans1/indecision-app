@@ -12,8 +12,10 @@ class IndecisionApp extends React.Component {
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));
     }
-    handleDeleteOption(option) {
-        console.log('hdo', option);
+    handleDeleteOption(optionToRemove) {
+        this.setState((prevState) => ({
+            options: prevState.options.filter((option)=> optionToRemove !== option )
+        }));
     }
     handlePick() {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
