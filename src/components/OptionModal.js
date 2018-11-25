@@ -5,6 +5,7 @@ const OptionModal = (props) => (
         <Modal
             isOpen={!!props.selectedOption}
             contentLabel="Selected Option"
+            onRequestClose={props.handleCloseModal}
             ariaHideApp={false}
         >
             <h3>Selected Option</h3>
