@@ -25,8 +25,30 @@ var IndecisionApp = function (_React$Component) {
         };
         return _this;
     }
+    // Life Cycle Method- Fires on component mount
+
 
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('fetching data');
+        }
+        // Life Cycle Method- Fires on component update
+
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('saving data');
+        }
+        // Life Cycle Method- Fires when component goes away
+        //    Useful for page change
+
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('componentWillUnmount!');
+        }
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {

@@ -9,6 +9,19 @@ class IndecisionApp extends React.Component {
             options: props.options
         }
     }
+    // Life Cycle Method- Fires on component mount
+    componentDidMount() {
+        console.log('fetching data');
+    }
+    // Life Cycle Method- Fires on component update
+    componentDidUpdate(prevProps, prevState) {
+        console.log('saving data');
+    }
+    // Life Cycle Method- Fires when component goes away
+    //    Useful for page change
+    componentWillUnmount(){
+        console.log('componentWillUnmount!');
+    }
     handleDeleteOptions() {
         this.setState(() => ({ options: [] }));
     }
