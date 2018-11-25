@@ -8,13 +8,21 @@ class OldSyntax {
     constructor() {
         this.name = 'Mike';
     }
+    getGreeting() {
+        return `Hi. My name is ${this.name}.`;
+    }
 }
 
 const oldSyntax = new OldSyntax();
-console.log(oldSyntax);
+console.log(oldSyntax.getGreeting());
 
 class NewSyntax {
     name = 'Jen';
+
+    getGreeting = () => {
+        return `Hi. My name is ${this.name}.`;
+    }
 }
 const newSyntax = new NewSyntax();
-console.log(newSyntax);
+const newGetGreeting = newSyntax.getGreeting();
+console.log(newGetGreeting);
