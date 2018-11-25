@@ -11,11 +11,24 @@ class IndecisionApp extends React.Component {
     }
     // Life Cycle Method- Fires on component mount
     componentDidMount() {
-        console.log('fetching data');
+
+        try { // Handle invalid json
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+
+            if (options) { // handle empty array
+                this.setState(() => ({options}));
+            }
+        } catch (e) {
+            // Do nothing at all
+        }
     }
     // Life Cycle Method- Fires on component update
     componentDidUpdate(prevProps, prevState) {
-        console.log('saving data');
+        if (prevState.options.length !== this.state.options.length) {
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+        }
     }
     // Life Cycle Method- Fires when component goes away
     //    Useful for page change
