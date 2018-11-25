@@ -204,13 +204,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-// const User = (props) => {
-//     return (
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     );
-// };
-
 ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
