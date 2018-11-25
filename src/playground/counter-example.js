@@ -9,6 +9,26 @@ class Counter extends React.Component {
             count: props.count
         };
     }
+    // Life Cycle Method- Fires on component mount
+    componentDidMount() {
+        try { // Handle invalid json
+            const json = localStorage.getItem('count');
+            const count = JSON.parse(json);
+
+            if (count) { // handle empty array
+                this.setState(() => ({count}));
+            }
+        } catch (e) {
+            // Do nothing at all
+        }
+    }
+    // Life Cycle Method- Fires on component update
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.count !== this.state.count) {
+            const json = JSON.stringify(this.state.count);
+            localStorage.setItem('count', json);
+        }
+    }
     handleAddOne() {
         // step 3- update state
         // step 4- refresh based on new state (automatic)
@@ -63,7 +83,7 @@ Counter.defaultProps = {
     count: 0
 };
 
-ReactDOM.render(<Counter count={1000}/>, document.getElementById('app'));
+ReactDOM.render(<Counter/>, document.getElementById('app'));
 
 /**let count = 0;
 

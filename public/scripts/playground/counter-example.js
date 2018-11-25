@@ -25,8 +25,38 @@ var Counter = function (_React$Component) {
         };
         return _this;
     }
+    // Life Cycle Method- Fires on component mount
+
 
     _createClass(Counter, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            try {
+                // Handle invalid json
+                var json = localStorage.getItem('count');
+                var count = JSON.parse(json);
+
+                if (count) {
+                    // handle empty array
+                    this.setState(function () {
+                        return { count: count };
+                    });
+                }
+            } catch (e) {
+                // Do nothing at all
+            }
+        }
+        // Life Cycle Method- Fires on component update
+
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            if (prevState.count !== this.state.count) {
+                var json = JSON.stringify(this.state.count);
+                localStorage.setItem('count', json);
+            }
+        }
+    }, {
         key: 'handleAddOne',
         value: function handleAddOne() {
             // step 3- update state
@@ -108,7 +138,7 @@ Counter.defaultProps = {
     count: 0
 };
 
-ReactDOM.render(React.createElement(Counter, { count: 1000 }), document.getElementById('app'));
+ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
 /**let count = 0;
 
