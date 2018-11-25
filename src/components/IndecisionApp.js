@@ -36,6 +36,11 @@ class IndecisionApp extends React.Component {
             options: prevState.options.concat(option)
         }));
     };
+    handleCloseModal = () => {
+        this.setState(() => ({
+            selectedOption: undefined
+        }));
+    };
     // Life Cycle Method- Fires on component mount
     componentDidMount() {
 
@@ -84,6 +89,7 @@ class IndecisionApp extends React.Component {
                 />
                 <OptionModal
                     selectedOption={this.state.selectedOption}
+                    handleCloseModal={this.handleCloseModal}
                 />
             </div>
         );
