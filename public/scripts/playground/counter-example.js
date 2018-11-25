@@ -21,7 +21,7 @@ var Counter = function (_React$Component) {
         _this.handleReset = _this.handleReset.bind(_this);
         // State configuration- initial state (step 1)
         _this.state = {
-            count: 0
+            count: props.count
         };
         return _this;
     }
@@ -104,7 +104,11 @@ var Counter = function (_React$Component) {
     return Counter;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
+Counter.defaultProps = {
+    count: 0
+};
+
+ReactDOM.render(React.createElement(Counter, { count: 1000 }), document.getElementById('app'));
 
 /**let count = 0;
 
