@@ -69,20 +69,18 @@ class Header extends React.Component {
     }
 }
 
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button
-                    disabled={!this.props.hasOptions}
-                    onClick={this.props.handlePick}
-                >
-                    What should I do?
-                </button>
-            </div>
-        );
-    }
-}
+const Action = (props) => {
+    return(
+        <div>
+            <button
+                disabled={!props.hasOptions}
+                onClick={props.handlePick}
+            >
+                What should I do?
+            </button>
+        </div>
+    );
+};
 
 class Options extends React.Component {
     render() {
@@ -141,13 +139,13 @@ class AddOption extends React.Component {
 }
 
 
-const User = (props) => {
-    return (
-        <div>
-            <p>Name: {props.name}</p>
-            <p>Age: {props.age}</p>
-        </div>
-    );
-};
+// const User = (props) => {
+//     return (
+//         <div>
+//             <p>Name: {props.name}</p>
+//             <p>Age: {props.age}</p>
+//         </div>
+//     );
+// };
 
-ReactDOM.render(<User name="Robert" age={29}/>, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp/>, document.getElementById('app'));
